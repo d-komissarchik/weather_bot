@@ -3,8 +3,7 @@ import requests
 import json
 
 
-bot = telebot.TeleBot('')
-API = ''
+
 
 
 @bot.message_handler(commands=['start'])
@@ -12,7 +11,7 @@ def start(message):
     bot.send_message(message.chat.id, 'Hello. Enter the name of the city: ')
 
 
-#декоратором проверяем что пользователь отправил имено текс, если да, то срабатывает ф-ия
+#декоратором проверяем что пользователь отправил имено текст, если да, то срабатывает ф-ия
 @bot.message_handler(content_types=['text'])
 def get_weather(message):
     city = message.text.strip().lower() #удаляем пробелы и переводим в нижний регистр
@@ -28,8 +27,5 @@ def get_weather(message):
         bot.send_photo(message.chat.id, file)
     else:
         bot.reply_to(message, f'Incorrect name of  city - {show_city}')
-
-
-
 
 bot.polling(none_stop=True)
