@@ -1,8 +1,10 @@
 import telebot
 import requests
 import json
+from config import geo_key
 
-
+bot = telebot.TeleBot()
+API = geo_key
 
 
 @bot.message_handler(commands=['start'])
