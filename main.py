@@ -1,9 +1,9 @@
 import telebot
 import requests
 import json
-from config import api_key
+from config import api_key, bot_key
 
-bot = telebot.TeleBot()
+bot = telebot.TeleBot(bot_key)
 API = api_key
 
 
