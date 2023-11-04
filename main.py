@@ -3,7 +3,7 @@ import requests
 import json
 from config import api_key
 
-bot = telebot.TeleBot('5356962954:AAGpPLeRTCf5ZEknWMeQlv87y8DGR86YdFY')
+bot = telebot.TeleBot()
 API = api_key
 
 
