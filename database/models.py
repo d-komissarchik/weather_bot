@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy import create_engine
 
 Base = declarative_base()
 
@@ -35,3 +36,8 @@ class User(Base):
 
     def __repr__(self):
         return self.name
+
+
+engine = create_engine('postgresql://postgres:admin@localhost:5432/postgres', echo=True)
+
+Base.metadata.create_all(engine)
