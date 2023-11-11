@@ -38,6 +38,6 @@ class User(Base):
         return self.name
 
 
-engine = create_engine('postgresql://postgres:admin@localhost:5432/postgres', echo=True)
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/postgres', echo=True)
 
 Base.metadata.create_all(engine)
